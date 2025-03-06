@@ -13,7 +13,7 @@
         "sourceTemplate": {
             "id": "@sap/generator-fiori:basic",
             "version": "1.16.5",
-            "toolsId": "6e806616-ae88-4933-973b-dc0bb0f34d4c"
+            "toolsId": "ac11f225-4b7a-450f-a4df-2843200018eb"
         }
     },
     "sap.ui": {
@@ -51,6 +51,10 @@
                 "settings": {
                     "bundleName": "sapips.training.jsonbinding.i18n.i18n"
                 }
+            },
+            "ProductsModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/ProductsModel.json"
             }
         },
         "resources": {

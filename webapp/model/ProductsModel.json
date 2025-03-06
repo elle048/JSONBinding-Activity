@@ -1,0 +1,65 @@
+{
+    "Products": [
+      {
+        "ProductID": 110,
+        "ProductName": "Matcha Milk Powder",
+        "SupplierID": 10,
+        "CategoryID": 1,
+        "QuantityPerUnit": "500 grams",
+        "UnitPrice": 300,
+        "UnitsInStock": 250,
+        "UnitsOnOrder": 15,
+        "ReorderLevel": 10,
+        "Discontinued": false
+      },
+      {
+        "ProductID": 111,
+        "ProductName": "Banana Milk Powder",
+        "SupplierID": 11,
+        "CategoryID": 2,
+        "QuantityPerUnit": "500 grams",
+        "UnitPrice": 250,
+        "UnitsInStock": 250,
+        "UnitsOnOrder": 40,
+        "ReorderLevel": 25,
+        "Discontinued": false
+      },
+      {
+        "ProductID": 112,
+        "ProductName": "Mango Milk Powder",
+        "SupplierID": 12,
+        "CategoryID": 3,
+        "QuantityPerUnit": "500 grams",
+        "UnitPrice": 250,
+        "UnitsInStock": 17,
+        "UnitsOnOrder": 40,
+        "ReorderLevel": 25,
+        "Discontinued": false
+      },
+      {
+        "ProductID": 113,
+        "ProductName": "Avocado Milk Powder",
+        "SupplierID": 13,
+        "CategoryID": 4,
+        "QuantityPerUnit": "500 grams",
+        "UnitPrice": 250,
+        "UnitsInStock": 17,
+        "UnitsOnOrder": 40,
+        "ReorderLevel": 25,
+        "Discontinued": false
+      },
+      {
+        "ProductID": 114,
+        "ProductName": "Ube Milk Powder",
+        "SupplierID": 14,
+        "CategoryID": 5,
+        "QuantityPerUnit": "500 grams",
+        "UnitPrice": 250,
+        "UnitsInStock": 17,
+        "UnitsOnOrder": 40,
+        "ReorderLevel": 25,
+        "Discontinued": false
+      }
+    ]
+  }
+  
