@@ -6,11 +6,12 @@
         "SupplierID": 10,
         "CategoryID": 1,
         "QuantityPerUnit": "500 grams",
-        "UnitPrice": 300,
+        "UnitPrice": 2750,
         "UnitsInStock": 250,
         "UnitsOnOrder": 15,
         "ReorderLevel": 10,
-        "Discontinued": false
+        "Discontinued": false,
+        "StockValue": 12023450
       },
       {
         "ProductID": 111,
@@ -18,11 +19,12 @@
         "SupplierID": 11,
         "CategoryID": 2,
         "QuantityPerUnit": "500 grams",
-        "UnitPrice": 250,
+        "UnitPrice": 3500,
         "UnitsInStock": 250,
-        "UnitsOnOrder": 40,
+        "UnitsOnOrder": 12,
         "ReorderLevel": 25,
-        "Discontinued": false
+        "Discontinued": false,
+        "StockValue": 16028099
       },
       {
         "ProductID": 112,
@@ -30,11 +32,12 @@
         "SupplierID": 12,
         "CategoryID": 3,
         "QuantityPerUnit": "500 grams",
-        "UnitPrice": 250,
+        "UnitPrice": 2550,
         "UnitsInStock": 17,
-        "UnitsOnOrder": 40,
+        "UnitsOnOrder": 35,
         "ReorderLevel": 25,
-        "Discontinued": false
+        "Discontinued": false,
+        "StockValue": 18000900
       },
       {
         "ProductID": 113,
@@ -42,11 +45,12 @@
         "SupplierID": 13,
         "CategoryID": 4,
         "QuantityPerUnit": "500 grams",
-        "UnitPrice": 250,
+        "UnitPrice": 1500,
         "UnitsInStock": 17,
-        "UnitsOnOrder": 40,
+        "UnitsOnOrder": 45,
         "ReorderLevel": 25,
-        "Discontinued": false
+        "Discontinued": false,
+        "StockValue": 120023800
       },
       {
         "ProductID": 114,
@@ -54,11 +58,12 @@
         "SupplierID": 14,
         "CategoryID": 5,
         "QuantityPerUnit": "500 grams",
-        "UnitPrice": 250,
+        "UnitPrice": 2800,
         "UnitsInStock": 17,
         "UnitsOnOrder": 40,
         "ReorderLevel": 25,
-        "Discontinued": false
+        "Discontinued": false,
+        "StockValue": 210346094
       }
     ]
   }

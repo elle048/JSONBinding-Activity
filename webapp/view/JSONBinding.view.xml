@@ -6,9 +6,9 @@
                     <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout" id="form0">
                         <sap.ui.layout.form:content>
                             <Label text="{i18n>labelEID}" id="label0"/>
-                            <Input value="{oPersonalDataModel>/EID}" width="100%" id="input0"/>
+                            <Input value="{oPersonalDataModel>/EID}" width="100%" id="input0" enabled="{/isEIDEnabled}"/>
                             <Label text="{i18n>labelEnabled}" id="label1"/>
-                            <CheckBox xmlns="sap.m" text="{i18n>checkboxText}" selected="false" id="box0"/>
+                            <CheckBox xmlns="sap.m" text="{i18n>checkboxText}" selected="false" id="box0" select="onCheckboxSelect"/>
                         </sap.ui.layout.form:content>
                     </sap.ui.layout.form:SimpleForm>
                 </content>
@@ -27,29 +27,47 @@
                     </sap.ui.layout.form:SimpleForm>
                 </content>
             </Panel>
-            <Panel xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel1" headerText="{i18n>panelAggregationBinding}" class="sapUiResponsiveMargin">
-                <content>
+            <Panel xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel1"
+    headerText="{i18n>panelAggregationBinding}" class="sapUiResponsiveMargin">
+    <content>
+        <List id="productList" items="{ProductsModel>/Products}" mode="SingleSelectMaster" itemPress="onSelectProduct">
+            <ObjectListItem id="productOList" type="Active" title="{ProductsModel>ProductName}" 
+                number="{
+                    parts: [ 
+                        {path: 'ProductsModel>UnitPrice'}, 
+                        {path: 'oPersonalDataModel>/CurrencyCode'}
+                    ], 
+                    type: 'sap.ui.model.type.Currency', 
+                    formatOptions: { showMeasure: false }
+                }"
+                numberUnit="{oPersonalDataModel>/CurrencyCode}">
 
-                <List id="productList" items="{ProductsModel>/Products}" mode="SingleSelectMaster" itemPress="onSelectProduct" >
-                    <ObjectListItem id="productOList" type="Active" title="{ProductsModel>ProductName}" 
-                        number="{ProductsModel>UnitPrice}" numberUnit="{oPersonalDataModel>/CurrencyCode}">
-                        
-                        <attributes>
-                            <ObjectAttribute id="objAttQuantity" text="{ProductsModel>QuantityPerUnit}" />
-                        </attributes>
-                        
-                        <firstStatus>
-                            <ObjectStatus id="objAttStock" text=" {ProductsModel>UnitsInStock} {i18n>labelUnitsInStock}" />
-                        </firstStatus>
-                        
-                        <secondStatus>
-                            <ObjectStatus id="objAttReorderLevel" text="Reorder Level: {ProductsModel>ReorderLevel}" />
-                        </secondStatus>
-                        
-                    </ObjectListItem>
-                </List>
-                </content>
-            </Panel>
+                <attributes>
+                    <ObjectAttribute id="objAttStock" 
+                        text="{i18n>labelUnitsInStock}: {ProductsModel>UnitsInStock}" />
+                    
+                        <ObjectAttribute id="objAttStockValue"
+    text="{
+        parts: [ 
+            {path: 'i18n>labelCurrentStockValue'}, 
+            {path: 'ProductsModel>StockValue'}, 
+            {path: 'oPersonalDataModel>/CurrencyCode'}
+        ], 
+        formatter: '.formatter.formatStockText'
+    }" />
+
+
+
+
+
+                </attributes>
+
+            </ObjectListItem>
+        </List>
+    </content>
+</Panel>
+
+
             <Panel xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel3" headerText="{i18n>panelProductDetails}" class="sapUiResponsiveMargin">
                 <content>
                     <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout" id="form0_1741160292009">
@@ -58,12 +76,20 @@
                             <Input width="100%" value="{ProductsModel>ProductID}" id="input1"/>
                             <Label text="{i18n>labelProductName}" id="label2"/>
                             <Input width="100%" value="{ProductsModel>ProductName}" id="input3"/>
+                            <Label text="{i18n>labelSupplierID}" id="label20"/>
+                            <Input width="100%" value="{ProductsModel>SupplierID}" id="input30"/>
+                            <Label text="{i18n>labelCatID}" id="label210"/>
+                            <Input width="100%" value="{ProductsModel>CategoryID}" id="input310"/>
                             <Label text="{i18n>labelQuantityPerUnit}" width="100%" id="label3"/>
                             <Input xmlns="sap.m" value="{ProductsModel>QuantityPerUnit}" id="input4"/>
                             <Label text="{i18n>labelUnitPrice}" width="100%" id="label4"/>
                             <Input xmlns="sap.m" value="{ProductsModel>UnitPrice}" id="input5"/>
                             <Label text="{i18n>labelUnitsInStock}" width="100%" id="label5"/>
                             <Input xmlns="sap.m" value="{ProductsModel>UnitsInStock}" id="input0_1741160417395"/>
+                            <Label text="{i18n>labelUnitsOnOrder}" width="100%" id="label6"/>
+                            <Input xmlns="sap.m" value="{ProductsModel>UnitsOnOrder}" id="input0_17411604137395"/>
+                            <Label text="{i18n>labelReorderlevel}" width="100%" id="label51"/>
+                            <Input xmlns="sap.m" value="{ProductsModel>ReorderLevel}" id="input0_17411604173951"/>
                             <Label text="{i18n>labelDiscontinued}" width="100%" id="label0_1741160466066"/>
                             <Input xmlns="sap.m" value="{ProductsModel>Discontinued}" id="input0_1741160472513"/>
                         </sap.ui.layout.form:content>

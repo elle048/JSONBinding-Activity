@@ -5,6 +5,11 @@ sap.ui.define([
     "use strict";
 
     var oCurrencyFormat = NumberFormat.getCurrencyInstance();
+    var oNumberFormat = NumberFormat.getFloatInstance({
+        minFractionDigits: 2, 
+        maxFractionDigits: 2, 
+        groupingEnabled: true // Enables comma separators
+    });
 
     return {
         formatMail: function (sEid) {
@@ -18,6 +23,13 @@ sap.ui.define([
 
         formatStockValue: function (fUnitPrice, iStockLevel, sCurrCode) {
             return oCurrencyFormat.format(fUnitPrice * iStockLevel, sCurrCode);
+        },
+
+        formatStockText: function (label, value) {
+            if (!label) return "";
+            if (value == null) value = 0; // Handles null values
+            
+            return label + ": " + oNumberFormat.format(value);
         }
     };
 });

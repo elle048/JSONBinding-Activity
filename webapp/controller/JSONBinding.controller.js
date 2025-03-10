@@ -33,6 +33,13 @@ sap.ui.define([
             this.getView().setModel(new JSONModel({}), "SelectedProductModel");
         },
 
+        onCheckboxSelect: function(oEvent) {
+            var bSelected = oEvent.getParameter("selected"); // Get checkbox state
+            var oInput = this.getView().byId("input0"); // Get input field
+            oInput.setEnabled(!bSelected); // Disable input if checkbox is selected
+        },
+        
+
         onSelectProduct: function(oEvent) {
             var oList = oEvent.getSource();
             var oSelectedItem = oList.getSelectedItem();
