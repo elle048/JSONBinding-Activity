@@ -27,7 +27,7 @@ sap.ui.define([
             oPersonalDataModel.setData(oPersonalData);
             this.getView().setModel(oPersonalDataModel, "oPersonalDataModel");
 
-            var oModel = new JSONModel("model/ProductsModel.json");
+            var oModel = new JSONModel("../model/ProductsModel.json");
             this.getView().setModel(oModel, "ProductsModel");
 
             this.getView().setModel(new JSONModel({}), "SelectedProductModel");
